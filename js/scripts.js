@@ -1,0 +1,3 @@
+if($('formulario').smockValidateEqualPass('form #contra1', 'form #contra2')){
+    // hacer algo ...
+  }
