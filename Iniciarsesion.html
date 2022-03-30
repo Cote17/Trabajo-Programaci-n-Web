@@ -39,35 +39,37 @@
 
     <br>
 
-    <form class="formulario">
-        <fieldset>
-            <div class="contenido-formulario">
-                <div class="contenido">
-                    <label>Correo electrónico:</label>
-                </div>
-    
-                <div class="contenido">
-                    <input type="email"required>
-                </div>
-    
-                <div class="contenido">
-                    <label>Contraseña:</label>
-                </div>
-    
-                <div class="contenido">
-                    <input type="password"required>
-                </div>
-    
-                <div class="contenido">
-                    <section>
-                        <a class="link-form" href="#"><h6>Olvidé mi Contraseña</h6></a>                    
-                    </section>
-                </div>
+    <form action="4" class="formulario" id="formulario">
+       
+        <!-- Grupo: nombre -->
+        <div class="formulario__grupo" id="grupo__nombre">
+            <label for="nombre" class="formulario__label">Usuario</label>
+            <div class="formulario__grupo-input">
+                <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
-            <div>
-                <input class="boton" type="submit" value="Iniciar sesión">
-            </div>    
-        </fieldset>
+            <p class="formulario__input-error">El Usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+        </div>
+        
+        <!-- Grupo: Contraseña -->
+        <div class="formulario__grupo" id="grupo__password">
+            <label for="password" class="formulario__label">Contraseña</label>
+            <div class="formulario__grupo-input">
+                <input type="password" class="formulario__input" name="password" id="password">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+        </div>
+
+        
+        <div class="formulario__mensaje" id="formulario__mensaje">
+            <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena los campos correctamente. </p>
+        </div>
+
+        <div class="formulario__grupo formulario__grupo-btn-enviar">
+            <button type="submit" class="formulario__btn">Iniciar Sesion</button>
+            <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+        </div>
     </form>
 
     <br>
