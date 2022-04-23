@@ -44,10 +44,10 @@
         <h4 class="titulo-formulario">Rellena los campos y te responderemos en breves.</h4>
     </section>
 
-    <form action="4" class="formulario" id="formulario">
+    <form action="#" class="formulario" id="formularioContacto">
 
         <div class="list-box">
-            <select name=" " required>
+            <select name="select" id="select">
                 <option value="">Tipo de comentario</option>
                 <option value="1">Duda</option>
                 <option value="2">Reclamo</option>
@@ -56,70 +56,38 @@
             </select>
         </div>
 
-        <!-- Grupo: nombre -->
-        <div class="formulario__grupo" id="grupo__nombre">
-            <label for="usuario" class="formulario__label">Nombre</label>
-            <div class="formulario__grupo-input">
-                <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Rodrigo Riquelme">
-                <i class="formulario__validacion-estado fas fa-times-circle"></i>
-            </div>
-            <p class="formulario__input-error">El nombre tiene que ser de 4 a 16 dígitos y solo puede contener numeros,
-                letras y guion bajo.</p>
-        </div>
-        <!-- Grupo: Teléfono -->
-        <div class="formulario__grupo" id="grupo__telefono">
-            <label for="telefono" class="formulario__label">Teléfono</label>
-            <div class="formulario__grupo-input">
-                <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="954743796">
-                <i class="formulario__validacion-estado fas fa-times-circle"></i>
-            </div>
-            <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
-        </div>
-        <!-- Grupo: Correo Electronico -->
-        <div class="formulario__grupo" id="grupo__correo">
-            <label for="correo" class="formulario__label">Correo Electrónico</label>
-            <div class="formulario__grupo-input">
-                <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
-                <i class="formulario__validacion-estado fas fa-times-circle"></i>
-            </div>
-            <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion
-                bajo.</p>
-        </div>
 
-        <!-- Grupo: ciudad -->
-        <div class="formulario__grupo" id="grupo__usuario">
-            <label for="nombre" class="formulario__label">Ciudad</label>
-            <div class="formulario__grupo-input">
-                <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Viña del Mar">
-                <i class="formulario__validacion-estado fas fa-times-circle"></i>
-            </div>
-            <p class="formulario__input-error">La ciudad tiene que ser de 4 a 16 dígitos y solo puede contener numeros,
-                letras y guion bajo.</p>
-        </div>
+        <label for="usuario" class="formulario__label">Nombre</label>
 
+        <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Rodrigo Riquelme">
+
+
+
+        <label for="telefono" class="formulario__label">Teléfono</label>
+
+        <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="954743796">
+
+
+
+        <label for="correo" class="formulario__label">Correo Electrónico</label>
+
+        <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
+
+
+        <label for="nombre" class="formulario__label">Ciudad</label>
+
+        <input type="text" class="formulario__input" name="ciudad" id="ciudad" placeholder="Viña del Mar">
 
         <div class="contenido">
             <label>Escribe tu comentario:</label>
         </div>
 
         <div class="contenido">
-            <textarea required></textarea>
-        </div>
-        
-
-
-
-
-
-        <div class="formulario__mensaje" id="formulario__mensaje">
-            <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente.
-            </p>
+            <textarea name="mensaje" id="mensaje"></textarea>
         </div>
 
-        <div class="formulario__grupo formulario__grupo-btn-enviar">
-            <button type="submit" class="formulario__btn">Enviar</button>
-            <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
-        </div>
+        <button type="submit" class="formulario__btn" id="btn_contacto">Enviar</button>
+
     </form>
 
     <br>
@@ -168,7 +136,10 @@
 
     </footer>
 
-    <script src="js/scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+    <script src="js/validacion_jquery.js"></script>
 
 </body>
 
