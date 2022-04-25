@@ -1,5 +1,5 @@
 $("#buscar").click(function () {
-    $.get("http://127.0.0.1:5500/js/Productos.json",
+    $.get("js/Productos.json",
         function (data) {
             $.each(data.productos, (function (i, item) {
                 $("#producto").append("<tr><td>" + item.idProducto + "</td> <td>" +
