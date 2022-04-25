@@ -80,6 +80,8 @@ const validarPassword2 = () => {
 	}
 }
 
+
+
 inputs.forEach((input) => {
 	input.addEventListener('keyup', validarFormulario);
 	input.addEventListener('blur', validarFormulario);
