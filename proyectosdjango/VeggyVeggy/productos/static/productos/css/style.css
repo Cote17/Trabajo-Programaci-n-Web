@@ -351,6 +351,18 @@ video {
     height: 10rem;
 }
 
+.hide {
+    opacity: 0;
+    left: -100%;
+    display: none;
+}
+
+.show {
+    opacity: 1;
+    left: 0;
+    margin: 10px;
+}
+
 
 /* Botones de los Formularios **/
 

@@ -1,118 +1,121 @@
+$("#mensajeErrorPass").hide();
 //inicio de sesión
 $("#inicioSesion").validate({
-    rules:{
-        nombre:{
+    rules: {
+        nombre: {
             required: true,
-            minlength:6,
-            maxlength:15
+            minlength: 6,
+            maxlength: 15
         },
-        contrasena:{
+        contrasena: {
             required: true,
-            minlength:5,
-            maxlength:12
+            minlength: 5,
+            maxlength: 12
         }
-        
+
     }
 })
 
-$("#iniciar").click(function(){
-    if($("#inicioSesion").valid== false){
-        return;
-    }
-    let nombre = $("#nombre" ).val()
-    let contrasena = $("#contrasena").val()
-    console.log(nombre)
-})
-//contacto 
+$("#iniciar").click(function() {
+        if ($("#inicioSesion").valid == false) {
+            return;
+        }
+        let nombre = $("#nombre").val()
+        let contrasena = $("#contrasena").val()
+        console.log(nombre)
+    })
+    //contacto 
 $("#formularioContacto").validate({
-    rules:{
-        select:{required:true
+    rules: {
+        select: {
+            required: true
 
         },
-        nombre:{
+        nombre: {
             required: true,
-            minlength:6,
-            maxlength:15
+            minlength: 6,
+            maxlength: 15
         },
-        telefono:{
+        telefono: {
             required: true,
-            minlength:9,
-            maxlength:10
+            minlength: 9,
+            maxlength: 10
         },
-        correo:{
+        correo: {
             required: true,
-            email:true,
-            minlength:9,
-            maxlength:30
-            
-        },
-         ciudad:{
-             required: true,
-             minlength:6,
-             maxlength:60
-         },
-         mensaje:{
-             required:true,
-         }
+            email: true,
+            minlength: 9,
+            maxlength: 30
 
+        },
+        ciudad: {
+            required: true,
+            minlength: 6,
+            maxlength: 60
+        },
+        mensaje: {
+            required: true,
         }
-        
-        
-    
+
+    }
+
+
+
 })
 
-$("#btn_contacto").click(function(){
-    if($("#formularioContacto").valid == false){
-        return;
-    }
-    let select= $("#select").val()
-    let nombre = $("#nombre" ).val()
-    let telefono = $("#telefono").val()
-    let correo= $("#correo").val()
-    let ciudad= $("#ciudad").val()
-    let mensaje= $("mensaje").val()
-    
-    
-})
-//trabaja con nosotros
+$("#btn_contacto").click(function() {
+        if ($("#formularioContacto").valid == false) {
+            return;
+        }
+        let select = $("#select").val()
+        let nombre = $("#nombre").val()
+        let telefono = $("#telefono").val()
+        let correo = $("#correo").val()
+        let ciudad = $("#ciudad").val()
+        let mensaje = $("mensaje").val()
+
+
+    })
+    //trabaja con nosotros
 $("#formularioTrabajo").validate({
-    rules:{
-        nombre:{
+    rules: {
+        nombre: {
             required: true,
-            minlength:6,
-            maxlength:15
+            minlength: 6,
+            maxlength: 15
         },
-        telefono:{
+        telefono: {
             required: true,
-            minlength:9,
-            maxlength:10
+            minlength: 9,
+            maxlength: 10
         },
-        correo:{
+        correo: {
             required: true,
-            email:true,
-            minlength:9,
-            maxlength:30
-            
+            email: true,
+            minlength: 9,
+            maxlength: 30
+
         },
-        archivo:{
-            required:true
+        archivo: {
+            required: true
         }
-        
-        
+
+
     }
 })
 
-$("#enviarTrabajo").click(function(){
-    if($("#formularioTrabajo").valid == false){
+$("#enviarTrabajo").click(function() {
+    if ($("#formularioTrabajo").valid == false) {
         return;
     }
-    let nombre = $("#nombre" ).val()
+    let nombre = $("#nombre").val()
     let telefono = $("#telefono").val()
-    let correo= $("#correo").val()
-    let archivo= $("archivo").val()
-    
-    
+    let correo = $("#correo").val()
+    let archivo = $("archivo").val()
+
+
 })
+
 jQuery.extend(jQuery.validator.messages, {
     required: "Este campo es obligatorio.",
     remote: "Por favor, rellena este campo.",
@@ -131,4 +134,4 @@ jQuery.extend(jQuery.validator.messages, {
     range: jQuery.validator.format("Por favor, escribe un valor entre {0} y {1}."),
     max: jQuery.validator.format("Por favor, escribe un valor menor o igual a {0}."),
     min: jQuery.validator.format("Por favor, escribe un valor mayor o igual a {0}.")
-  });
+});
