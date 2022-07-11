@@ -116,6 +116,55 @@ $("#enviarTrabajo").click(function() {
 
 })
 
+$("#formularioEnvio").validate({
+    rules: {
+        nombre: {
+            required: true,
+            minlength: 6,
+            maxlength: 15
+        },
+        telefono: {
+            required: true,
+            minlength: 9,
+            maxlength: 10
+        },
+        correo: {
+            required: true,
+            email: true,
+            minlength: 9,
+            maxlength: 30
+
+        },
+        direccion: {
+            required: true,
+            minlength: 6,
+            maxlength: 60
+        },
+        ciudad: {
+            required: true,
+            minlength: 6,
+            maxlength: 60
+        },
+
+    }
+
+
+
+})
+
+$("#btn_envio").click(function() {
+    if ($("#formularioEnvio").valid == false) {
+        return;
+    }
+    let nombre = $("#nombre").val()
+    let telefono = $("#telefono").val()
+    let correo = $("#correo").val()
+    let direccion = $("#direccion").val()
+    let ciudad = $("#ciudad").val()
+
+
+})
+
 jQuery.extend(jQuery.validator.messages, {
     required: "Este campo es obligatorio.",
     remote: "Por favor, rellena este campo.",

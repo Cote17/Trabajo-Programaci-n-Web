@@ -1,21 +1,21 @@
 {
     "productos": [{
             "idProducto": "1",
-            "strProducto": "<h3>Not Mayo Sabor Original</h3>",
-            "strProductoThumb": "<img src='/static/productos/img/NotMayo.png' width='300'>",
-            "strProductoDescription": "<p>Aderezo en base a vegetales, tipo mayonesa. Sin transgénicos, sin colesterol, sin lactosa, sin gluten, sin huevo, sin soya.</p>"
+            "strProducto": "<h6>Not Mayo Sabor Original</h6>",
+            "strProductoThumb": "<img src='/static/productos/img/NotMayo.png' width='100'>",
+            "strProductoDescription": "<p scoope = 'col' class = 'texto'>Aderezo en base a vegetales, tipo mayonesa. Sin transgénicos, sin colesterol, sin lactosa, sin gluten, sin huevo, sin soya.</p>"
         },
         {
             "idProducto": "2",
-            "strProducto": "<h3>Mezcla Para Salsa Boloñesa de Soya</h3>",
-            "strProductoThumb": "<img src='/static/productos/img/SalsaBolonnesaSoya.png' width='300'>",
-            "strProductoDescription": "<p>Elaborada a partir de proteína de soya, tomate, cebolla, zanahoria y condimentos. La perfecta salsa boloñesa, ahora sin carne.</p>"
+            "strProducto": "<h6>Mezcla Para Salsa Boloñesa de Soya</h6>",
+            "strProductoThumb": "<img src='/static/productos/img/SalsaBolonnesaSoya.png' width='100'>",
+            "strProductoDescription": "<p scoope = 'col' class = 'texto'>Elaborada a partir de proteína de soya, tomate, cebolla, zanahoria y condimentos. La perfecta salsa boloñesa, ahora sin carne.</p>"
         },
         {
             "idProducto": "3",
-            "strProducto": "<h3>Barra de Brownie - Nature's Bakery</h3>",
-            "strProductoThumb": "<img src='/static/productos/img/Brownie.png' width='300'>",
-            "strProductoDescription": "<p>Harina de trigo de grano entero, jarabe de caña de azúcar, pasta de dátil, aceite de canola, cacao en polvo, azúcar de caña deshidratada, chocolate (licor de chocolate (pasta de cacao), azúcar de caña, manteca de cacao), saborizante natural, sal de mar, semilla de linaza y bicarbonato de sodio.</p>"
+            "strProducto": "<h6>Barra de Brownie - Nature's Bakery</h6>",
+            "strProductoThumb": "<img src='/static/productos/img/Brownie.png' width='100'>",
+            "strProductoDescription": "<p scoope = 'col' class = 'texto'>Harina de trigo de grano entero, jarabe de caña de azúcar, pasta de dátil, aceite de canola, cacao en polvo, azúcar de caña deshidratada, chocolate (licor de chocolate (pasta de cacao), azúcar de caña, manteca de cacao), saborizante natural, sal de mar, semilla de linaza y bicarbonato de sodio.</p>"
         }
     ]
 }

@@ -121,7 +121,7 @@ function IsCorreo(correo) {
 }
 
 function IsFono(telefono) {
-    var regex = /^\d{7,14}$/;
+    var regex = /^[0-9]+$/;
     if (!regex.test(telefono)) {
         return false;
     } else {
@@ -146,7 +146,7 @@ function validarFormulario(evento) {
     var errorMismaClave = document.getElementById('errorMismaClave');
     var terminos = document.getElementById('terminos').checked;
     var errorTyc = document.getElementById('errorTyc');
-    console.log(terminos.checked);
+
     errorNom.classList.add('hide');
     errorNom.classList.remove('show');
     errorFono.classList.add('hide');
@@ -159,12 +159,13 @@ function validarFormulario(evento) {
     errorMismaClave.classList.remove('show');
     errorTyc.classList.add('hide');
     errorTyc.classList.remove('show');
+
     if (usuario.length == 0) {
         errorNom.classList.remove('hide');
         errorNom.classList.add('show');
         return;
     }
-    if (((telefono.length == 0) || (telefono.length > 10)) && (!IsFono(telefono))) {
+    if (((telefono.length < 8) || (telefono.length > 10)) || (!IsFono(telefono))) {
         errorFono.classList.remove('hide');
         errorFono.classList.add('show');
         return;
