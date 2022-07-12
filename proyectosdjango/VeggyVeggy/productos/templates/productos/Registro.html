@@ -20,23 +20,6 @@
     <header>
         <h1 class="marca">VeggyVeggy</h1>
     </header>
-    <div class="nav-bg">
-        <nav class="navegacion-principal contenedor">
-            <a href="{%url 'home'%}">Inicio</a>
-            <a href="{%url 'trabajaconnosotros'%}">Trabaja con nosotros</a>
-            <a href="{%url 'articulos'%}">Productos</a>
-            <a href="{%url 'contactanos'%}">Contáctanos</a>
-
-            <a href="{%url 'iniciosesion'%}"><svg xmlns="http://www.w3.org/2000/svg"
-                    class="icon icon-tabler icon-tabler-user-circle" width="28" height="28" viewBox="0 0 24 24"
-                    stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <circle cx="12" cy="12" r="9" />
-                    <circle cx="12" cy="10" r="3" />
-                    <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" />
-                </svg></a>
-        </nav>
-    </div>
 
     <video src="{% static 'productos/img/video.mp4' %}" autoplay="true" muted="true" loop="true"></video>
 
@@ -49,101 +32,137 @@
 
     <br>
 
-    <form action="4" class="formulario" id="formulario">
-
-        <!-- Grupo: nombre -->
-        <div class="formulario__grupo" id="grupo__nombre">
+    <!--<form action = "" class="formulario" id="formulario" method='POST'>
+        {%csrf_token%}
+        {{fomr.as_p}}
+        <!--<!-- Grupo: nombre -->
+        <!--div class="formulario__grupo" id="grupo__nombre">
             <label for="usuario" class="formulario__label">Nombre</label>
             <div class="formulario__grupo-input">
-                <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Rodrigo Riquelme">
-                <i class="formulario__validacion-estado fas fa-times-circle"></i>
-            </div>
+                {{form.nombre}}
+                <!--input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Rodrigo Riquelme"-->
+                <!--i class="formulario__validacion-estado fas fa-times-circle"></i-->
+            <!--/div>
             <p class="formulario__input-error">El nombre tiene que ser de 4 a 16 letras y solo puede contener letras.
             </p>
-        </div>
+        </div-->
+
         <!-- Grupo: Teléfono -->
-        <div class="formulario__grupo" id="grupo__telefono">
+        <!--div class="formulario__grupo" id="grupo__telefono">
             <label for="telefono" class="formulario__label">Teléfono</label>
             <div class="formulario__grupo-input">
-                <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="954743796">
-                <i class="formulario__validacion-estado fas fa-times-circle"></i>
-            </div>
+                {{form.telefono}}
+                <!--input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="954743796"-->
+                <!--i class="formulario__validacion-estado fas fa-times-circle"></i-->
+            <!--/div>
             <p class="formulario__input-error">El teléfono solo puede contener números y el máximo son 14 dígitos.</p>
-        </div>
+        </div-->
+
         <!-- Grupo: Correo Electronico -->
-        <div class="formulario__grupo" id="grupo__correo">
+        <!--div class="formulario__grupo" id="grupo__correo">
             <label for="correo" class="formulario__label">Correo Electrónico</label>
             <div class="formulario__grupo-input">
-                <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
-                <i class="formulario__validacion-estado fas fa-times-circle"></i>
-            </div>
+                {{form.correo}}
+                <!--input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com"-->
+                <!--i class="formulario__validacion-estado fas fa-times-circle"></i-->
+            <!--/div>
             <p class="formulario__input-error">El correo solo puede contener letras, números, puntos, guiones y guión
                 bajo.</p>
-        </div>
+        </div-->
 
         <!-- Grupo: ciudad -->
-        <div class="formulario__grupo" id="grupo__usuario">
+        <!--div class="formulario__grupo" id="grupo__usuario">
             <label for="nombre" class="formulario__label">Ciudad</label>
             <div class="formulario__grupo-input">
-                <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Viña del Mar">
-                <i class="formulario__validacion-estado fas fa-times-circle"></i>
-            </div>
+                {{form.usuario}}
+                <!--input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Viña del Mar"-->
+                <!--i class="formulario__validacion-estado fas fa-times-circle"></i-->
+            <!--/div>
             <p class="formulario__input-error">La ciudad tiene que ser de 4 a 16 letras y solo puede contener letras.
             </p>
-        </div>
-
+        </div-->
 
         <!-- Grupo: Contraseña -->
-        <div class="formulario__grupo" id="grupo__password">
+        <!--div class="formulario__grupo" id="grupo__password">
             <label for="password" class="formulario__label">Contraseña</label>
             <div class="formulario__grupo-input">
-                <input type="password" class="formulario__input" name="password" id="password">
-                <i class="formulario__validacion-estado fas fa-times-circle"></i>
-            </div>
+                {{form.password}}
+                <!--input type="password" class="formulario__input" name="password" id="password"-->
+                <!--i class="formulario__validacion-estado fas fa-times-circle"></i-->
+            <!--/div>
             <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
-        </div>
+        </div-->
 
         <!-- Grupo: Contraseña 2 -->
-        <div class="formulario__grupo" id="grupo__password2">
+        <!--div class="formulario__grupo" id="grupo__password2">
             <label for="password2" class="formulario__label">Repetir Contraseña</label>
             <div class="formulario__grupo-input">
-                <input type="password" class="formulario__input" name="password2" id="password2">
-                <i class="formulario__validacion-estado fas fa-times-circle"></i>
-            </div>
+                {{form.password2}}
+                <!--input type="password" class="formulario__input" name="password2" id="password2"-->
+                <!--i class="formulario__validacion-estado fas fa-times-circle"></i-->
+            <!--/div>
             <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
-        </div>
+        </div-->
         <br>
 
-
-
-
-
         <!-- Grupo: Terminos y Condiciones -->
-        <div class="formulario__grupo" id="grupo__terminos">
+        <!--div class="formulario__grupo" id="grupo__terminos">
             <label class="formulario__label">
-                <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+                {{form.terminos}}
+                <!--<input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
                 Acepto los Términos y Condiciones
-            </label>
-        </div>
+            <!--/label>
+        </div-->
 
-        <div class="formulario__mensaje" id="formulario__mensaje">
+        <!--div class="formulario__mensaje" id="formulario__mensaje">
             <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente.
             </p>
         </div>
 
         <div class="formulario__grupo formulario__grupo-btn-enviar">
-            <button type="submit" class="formulario__btn">Enviar</button>
-            <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+            <input type="submit" class="formulario__btn">
+            <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Usuario registrado exitosamente!</p>
         </div>
-    </form>
+    </form-->
+    <form class="formulario" id="formularioRegistro" method="POST">
+        {%csrf_token%}
 
-    <script src="js/formulario.js"></script>
-    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+        <label for="usuario" class="formulario__label">Nombre</label>
+        {{form.nombre}}
+        <p class = "hide text-danger" id = "errorNom">Rellene este campo.</p>
+
+        <label for="telefono" class="formulario__label">Teléfono</label>
+        {{form.telefono}}
+        <p class = "hide text-danger" id = "errorFono">Ingrese sólo números y con un largo de 8 a 10 dígitos.</p>
+
+        <label for="correo" class="formulario__label">Correo Electrónico</label>
+        {{form.correo}}
+        <p class = "hide text-danger" id = "errorCorreo">Ingrese @ y .</p>
+
+        <label for="password" class="formulario__label">Contraseña</label>
+        {{form.password}}
+        <p class = "hide text-danger" id = "errorClave">Cree una contraseña menor a 10 dígitos y mayor a 4 dígitos.</p>
+
+        <label for="password2" class="formulario__label">Repetir Contraseña</label>
+        {{form.password2}}
+        <p class = "hide text-danger" id = "errorMismaClave">Las contraseñas no coinciden.</p>
+
+        <div>
+            <label class="formulario__label">
+                {{form.terminos}}
+                Acepto los Términos y Condiciones
+            </label>
+            <p class = "hide text-danger" id = "errorTyc">Acepte nuestros términos y Condiciones.</p>
+        </div>
+        
+        <input type="submit" value="Enviar" class="formulario__btn" id="crearUsr"/>
+
+    </form>
 
     <br>
 
     <section>
-        <h4 class="titulo-formulario"><span class="bg-titulo">&nbsp;&nbsp;¿Ya tienes una cuenta?<a class="link-form" href="{%url 'iniciosesion'%}"> Iniciar
+        <h4 class="titulo-formulario"><span class="bg-titulo">&nbsp;&nbsp;¿Ya tienes una cuenta?<a class="link-forme" href="{%url 'iniciosesion'%}"> Iniciar
                 sesión&nbsp;&nbsp;</a></span></h4>
     </section>
 
@@ -198,7 +217,7 @@
         </div>
     </footer>
 
-    <!--<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>-->
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -210,6 +229,7 @@
         crossorigin="anonymous"></script>
 
     <script src="{% static 'productos/js/scripts.js' %}"></script>
+    <!--script src="{% static 'productos/js/validacion_jquery.js' %}"></script-->
     
 </body>
 

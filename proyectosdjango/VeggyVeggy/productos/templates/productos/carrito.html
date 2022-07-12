@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+{% load static %}
+{% block content %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Carrito</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Secular+One&family=Volkhov&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="{% static 'productos/css/style.css' %}" rel="stylesheet">
+        <script src="{% static 'productos/js/CSRFToken.js' %}"></script>  
+    </head>
+    <body>
+        <header>
+            <h1 class="marca">VeggyVeggy</h1>
+        </header>
+
+        <video src= "{% static 'productos/img/video.mp4' %}" autoplay="true" muted="true" loop="true"></video>
+
+        <!--div class = "row"-->
+            <div class = "col-lg-12">
+                <div class = "box-element">
+                    <a class = "btn btn-outline-dark" href = "{% url 'articulos' %}">&#x2190; Seguir comprando</a>
+
+                    <br>
+                    <br>
+
+                    <table class = "table">
+                        <tr>
+                            <th><h5>Items: <strong>
+                            {{order.get_cart_items}}</strong></h5>
+                            </th>
+                            <th><h5>Total: <strong>${{order.get_cart_total}}</strong></h5>
+                            </th>
+                            <th>
+                                <a style = "float:right; margin:5px" class = "btn btn-success" href = "{%url 'Dpago'%}">Pago</a>
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+                
+                <br>
+
+                <div class = "box-element">
+                    <div class = "cart-row">
+                        <div style="flex:2"></div>
+                        <div style="flex:2"><strong>Nombre item</strong></div>
+                        <div style="flex:1"><strong>Precio</strong></div>
+                        <div style="flex:1"><strong>Cantidad</strong></div>
+                        <div style="flex:1"><strong>Total</strong></div> 
+                    </div>
+
+                    {% for item in items %}
+                    <div class = "cart-row">
+                        <div style="flex:2"><img class="row-image" 
+                        src="/{{item.product.img}}"></div>
+                        <div style="flex:2">{{item.product.nombre}}</div>
+                        <div style="flex:1">${{item.product.precio}}</div>
+                        <div style="flex:1">
+                            <p class="quantity">{{item.cantidad}}</p>
+                            <div class="quantity">
+                                <button id = "botons"><img data-producto="{{item.product.idProducto}}" data-action="add" class="chg-quantity editar-carrito" src="{% static 'productos/img/3+arrow-up.png' %}" width = "18vw"></button>
+                                <button id = "botons"><img data-producto="{{item.product.idProducto}}" data-action="remove" class="chg-quantity editar-carrito" src="{% static 'productos/img/2+arrow-down.png' %}" width = "18vw"></button>
+                            </div>
+                        </div>
+                        <div style="flex:1">${{item.get_total}}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        <!--/div-->
+
+        <br>
+        <br>
+
+        <footer class="pie-pagina">
+            <h4>Contacto</h4>
+            <p>veggyveggyveganfood@gmail.com</p>
+            <p>Fono: (+56 9)99311218</p>
+            <p>xxxxxxxx</p>
+            <h5 class="contacto-text">Ingresa a nuestras redes sociales!</h5>
+            <br>
+            <div class="contacto">
+            <section>
+                <a href="https://www.youtube.com/channel/UC_zS0VC3eQw1jpRLx22i4fw/featured"><svg
+                    xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-youtube" width="24" height="24"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <rect x="3" y="5" width="18" height="14" rx="4" />
+                    <path d="M10 9l5 3l-5 3z" />
+                </svg></a>
+            </section>
+            <section>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook"
+                    width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
+                </svg></a>
+            </section>
+            <section>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter"
+                    width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                    d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+                </svg></a>
+            </section>
+            <section>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram"
+                    width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <rect x="4" y="4" width="16" height="16" rx="4" />
+                    <circle cx="12" cy="12" r="3" />
+                    <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
+                </svg></a>
+            </section>
+            </div>
+        </footer>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
+        <script src="{% static 'productos/js/carrito.js' %}"></script> 
+
+    </body>
+</html>
+
+{% endblock content %}
